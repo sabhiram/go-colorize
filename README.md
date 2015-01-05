@@ -4,6 +4,12 @@
 
 A `Go` library to fetch colorized ascii text
 
+For more information regarding ASCII Escape Codes, and Colors see [this link](http://en.wikipedia.org/wiki/ANSI_escape_code).
+
+Table of supported colors for reference (from the above wiki entry):
+
+![](https://raw.githubusercontent.com/sabhiram/public-images/master/colorize/ascii_color_table.png)
+
 ## Install
 
 ```shell
