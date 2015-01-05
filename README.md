@@ -46,12 +46,14 @@ func main() {
 }
 ```
 
-Install and run:
+#### Install and run:
+
 ```shell
 cd color_me
 go install
 color_me
 ```
 
-Outputs:
+#### Outputs:
+
 ![](https://raw.githubusercontent.com/sabhiram/public-images/master/colorize/colorize_sample.png)
