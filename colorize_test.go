@@ -10,7 +10,7 @@ import "testing"
 
 func TestColorizeWithStringColor(test *testing.T) {
     // Define our test cases for the colorize with string color cases
-    cases := []struct {
+    cases := [] struct {
         input, color, expected string
     }{
         // Non-standard cases
