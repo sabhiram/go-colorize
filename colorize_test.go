@@ -1,21 +1,9 @@
-/****************************************************************************\
-
-`colorize` is a simple package which returns an ascii colorized
-string version of an input string
-
-Here is a table of ASCII to color values:
-
-    Intensity   0       1      2       3       4       5       6       7
-    Normal      Black   Red    Green   Yellow  Blue    Magenta Cyan    White
-    Bright      Black   Red    Green   Yellow  Blue    Magenta Cyan    White
-
-(sourced from: http://en.wikipedia.org/wiki/ANSI_escape_code)
-
-\****************************************************************************/
+// Implement tests for the `colorize` library
 package colorize
 
 import "testing"
 
+// Validate `colorize.ColorString()`
 func TestColorString(test *testing.T) {
     // Define our test cases for the colorize with string color cases
     cases := [] struct {
@@ -48,6 +36,7 @@ func TestColorString(test *testing.T) {
     }
 }
 
+// Validate `colorize.Colorize()`
 func TestColorize(test *testing.T) {
     // Define our test cases for the colorize with string color cases
     cases := [] struct {
