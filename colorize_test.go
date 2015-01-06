@@ -3,12 +3,20 @@
 `colorize` is a simple package which returns an ascii colorized
 string version of an input string
 
+Here is a table of ASCII to color values:
+
+    Intensity   0       1      2       3       4       5       6       7
+    Normal      Black   Red    Green   Yellow  Blue    Magenta Cyan    White
+    Bright      Black   Red    Green   Yellow  Blue    Magenta Cyan    White
+
+(sourced from: http://en.wikipedia.org/wiki/ANSI_escape_code)
+
 \****************************************************************************/
 package colorize
 
 import "testing"
 
-func TestColorizeWithStringColor(test *testing.T) {
+func TestColorString(test *testing.T) {
     // Define our test cases for the colorize with string color cases
     cases := [] struct {
         input, color, expected string
@@ -32,10 +40,29 @@ func TestColorizeWithStringColor(test *testing.T) {
 
     // Run tests
     for _, tc := range cases {
-        actual := Colorize(tc.input, tc.color)
+        actual := ColorString(tc.input, tc.color)
         if actual != tc.expected {
-            test.Errorf("Colorize(%q, %q) == %q, expected %q",
+            test.Errorf("ColorString(%q, %q) == %q, expected %q",
                         tc.input, tc.color, actual, tc.expected)
+        }
+    }
+}
+
+func TestColorize(test *testing.T) {
+    // Define our test cases for the colorize with string color cases
+    cases := [] struct {
+        input, expected string
+    }{
+        { "Test <red>A</red> <blue>B</blue>", "Test \x1b[31mA\x1b[0m \x1b[34mB\x1b[0m" },
+        { "Test <red>A</red> <red>B</red>",   "Test \x1b[31mA\x1b[0m \x1b[31mB\x1b[0m" },
+    }
+
+    // Run tests
+    for _, tc := range cases {
+        actual := Colorize(tc.input)
+        if actual != tc.expected {
+            test.Errorf("Colorize(%q) == %q, expected %q",
+                        tc.input, actual, tc.expected)
         }
     }
 }
