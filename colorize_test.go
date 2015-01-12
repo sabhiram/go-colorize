@@ -1,9 +1,12 @@
-// Implement tests for the `colorize` library
+// Implement tests for the "colorize" library
 package colorize
 
-import "testing"
+import (
+    "testing"
+    "fmt"
+)
 
-// Validate `colorize.ColorString()`
+// Validate "colorize.ColorString()"
 func TestColorString(test *testing.T) {
     // Define our test cases for the colorize with string color cases
     cases := [] struct {
@@ -36,7 +39,7 @@ func TestColorString(test *testing.T) {
     }
 }
 
-// Validate `colorize.Colorize()`
+// Validate "colorize.Colorize()"
 func TestColorize(test *testing.T) {
     // Define our test cases for the colorize with string color cases
     cases := [] struct {
@@ -54,4 +57,30 @@ func TestColorize(test *testing.T) {
                         tc.input, actual, tc.expected)
         }
     }
+}
+
+
+func ExampleColorString() {
+    fmt.Println("Hello - " + ColorString("black",   "black"))
+    fmt.Println("Hello - " + ColorString("red",     "red"))
+    fmt.Println("Hello - " + ColorString("green",   "green"))
+    fmt.Println("Hello - " + ColorString("yellow",  "yellow"))
+    fmt.Println("Hello - " + ColorString("blue",    "blue"))
+    fmt.Println("Hello - " + ColorString("magenta", "magenta"))
+    fmt.Println("Hello - " + ColorString("cyan",    "cyan"))
+    fmt.Println("Hello - " + ColorString("white",   "white"))
+
+}
+
+func ExampleColorize() {
+    fmt.Println(Colorize(`
+
+
+<red>This text will be red</red> and this is default...
+
+            <blue>This is blue!</blue>
+
+<red>0</red><green>1</green><yellow>3</yellow><blue>4</blue><magenta>5</magenta><cyan>6</cyan><white>7</white>
+
+`))
 }

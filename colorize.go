@@ -1,4 +1,4 @@
-// `colorize` is a simple package which returns an ascii colorized
+// "colorize" is a simple package which returns an ascii colorized
 // string version of an input string
 //
 // Here is a table of ASCII to color values:
@@ -31,9 +31,9 @@ var colorToValueMap = map [string] int {
     "white":   7,
 }
 
-// Function which returns the `input` string after sorrounding it
-// by the appropriate ASCII escape sequence for the requested `color`.
-// If the `color` input is not a member of the map, we simply return
+// Function which returns the "input" string after sorrounding it
+// by the appropriate ASCII escape sequence for the requested "color".
+// If the "color" input is not a member of the map, we simply return
 // the input without any change
 func ColorString(input, color string) string {
     color = strings.ToLower(color)
@@ -43,7 +43,7 @@ func ColorString(input, color string) string {
     return input
 }
 
-// Function which takes in a string embedded with `<color>...</color>` tags.
+// Function which takes in a string embedded with "<color>...</color>" tags.
 // Any un-matched tags will be ignored and not stripped from the input string
 func Colorize(input string) string {
     for color, index := range colorToValueMap {
