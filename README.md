@@ -1,6 +1,6 @@
 # Colorize
 
-[![Build Status](https://travis-ci.org/sabhiram/colorize.svg)](https://travis-ci.org/sabhiram/colorize) [![Coverage Status](https://coveralls.io/repos/sabhiram/colorize/badge.png?branch=master)](https://coveralls.io/r/sabhiram/colorize?branch=master)
+[![Build Status](https://travis-ci.org/sabhiram/go-colorize.svg)](https://travis-ci.org/sabhiram/go-colorize) [![Coverage Status](https://coveralls.io/repos/sabhiram/go-colorize/badge.png?branch=master)](https://coveralls.io/r/sabhiram/go-colorize?branch=master)
 
 A `Go` library to fetch colorized ascii text
 
@@ -13,14 +13,13 @@ Table of supported colors for reference (from the above wiki entry):
 ## Install
 
 ```shell
-go get github.com/sabhiram/colorize
+go get github.com/sabhiram/go-colorize
 ```
 
 ## (Sample) Usage
 
 ```shell
-mkdir color_me
-cd color_me
+mkdir color_me && cd color_me
 touch color_me.go
 ```
 
@@ -31,7 +30,7 @@ package main
 import (
     "fmt"
 
-    "github.com/sabhiram/colorize"
+    "github.com/sabhiram/go-colorize"
 )
 
 func main() {
