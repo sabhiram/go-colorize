@@ -66,3 +66,4 @@ color_me
 #### Outputs:
 
 ![](https://raw.githubusercontent.com/sabhiram/public-images/master/colorize/colorize_sample.png)
+
