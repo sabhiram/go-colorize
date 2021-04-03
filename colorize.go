@@ -12,8 +12,11 @@ package colorize
 
 import (
 	"fmt"
+	"os"
 	"regexp"
 	"strings"
+
+	"github.com/mattn/go-isatty"
 )
 
 // colorToValueMap can convert the string values of an input ASCII
@@ -29,6 +32,12 @@ var colorToValueMap = map[string]int{
 	"cyan":    6,
 	"white":   7,
 }
+
+// DisableColor sets the coloring option off. This automatically is set for
+// dumb terminals, and can optionally be set at the module level for CLI
+// apps that may support an option like `--no-color`.
+var DisableColor = os.Getenv("TERM") == "dumb" ||
+	(!isatty.IsTerminal(os.Stdout.Fd()) && !isatty.IsCygwinTerminal(os.Stdout.Fd()))
 
 // ColorString is a function which returns the "input" string after surrounding
 // it by the appropriate ASCII escape sequence for the requested "color".

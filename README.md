@@ -16,14 +16,9 @@ Table of supported colors for reference (from the above wiki entry):
 go get github.com/sabhiram/go-colorize
 ```
 
-## (Sample) Usage
+## Example
 
-```shell
-mkdir color_me && cd color_me
-touch color_me.go
-```
-
-*color_me/color_me.go*:
+*example/example.go*
 ```go
 package main
 
@@ -58,9 +53,7 @@ func main() {
 #### Install and run:
 
 ```shell
-cd color_me
-go install
-color_me
+go run example/example.go
 ```
 
 #### Outputs:
