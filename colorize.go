@@ -44,10 +44,15 @@ var DisableColor = os.Getenv("TERM") == "dumb" ||
 // If the "color" input is not a member of the map, we simply return
 // the input without any change
 func ColorString(input, color string) string {
+	if DisableColor {
+		return input
+	}
+
 	color = strings.ToLower(color)
 	if colorIndex, valid := colorToValueMap[color]; valid {
 		return fmt.Sprintf("\033[3%dm%s\033[0m", colorIndex, input)
 	}
+
 	return input
 }
 
@@ -61,6 +66,9 @@ func Colorize(input string) string {
 			replaceString = fmt.Sprintf("\033[3%dm$2\033[0m", index)
 			match         = regexp.MustCompile(searchString)
 		)
+		if DisableColor {
+			replaceString = "$2"
+		}
 		input = match.ReplaceAllString(input, replaceString)
 	}
 	return input
