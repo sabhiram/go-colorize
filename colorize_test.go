@@ -85,3 +85,9 @@ func ExampleColorize() {
 
 `))
 }
+
+func init() {
+	// Force override on this, otherwise depending on the terminal we will fail
+	// things like TravisCI etc.
+	DisableColor = false
+}
